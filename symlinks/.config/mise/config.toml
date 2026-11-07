@@ -10,9 +10,10 @@ dotfiles.default_mode = "symlink"
 # $ mise bootstrap packages status
 # $ mise bootstrap packages apply
 [bootstrap.packages]
-"brew-cask:visual-studio-code" = "latest"
-"brew-cask:google-chrome" = "latest"
 "brew-cask:nordvpn" = "latest"
+"brew-cask:google-chrome" = "latest"
+"brew-cask:visual-studio-code" = "latest"
+"brew-cask:docker" = "latest"
 
 [bootstrap.repos]
 "~/dotfiles" = { url = "https://github.com/takahiroaoki/dotfiles.git", ref = "main" }
