@@ -38,6 +38,14 @@ orientation = "left"
 tilesize = 36
 magnification = false
 show_recents = false
+apps = [
+    "/System/Applications/Utilities/Terminal.app",
+    "/Applications/Google Chrome.app",
+    "/Applications/Visual Studio Code.app",
+    "/Applications/Docker.app",
+    "/Applications/NordVPN.app",
+    "/System/Applications/System Settings.app",
+]
 
 # < tools >
 # $ mise install
