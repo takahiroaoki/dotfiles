@@ -6,6 +6,9 @@ auto_install = false
 minimum_release_age = "7d"
 dotfiles.default_mode = "symlink"
 
+# < packages >
+# $ mise bootstrap packages status
+# $ mise bootstrap packages apply
 [bootstrap.packages]
 "brew-cask:visual-studio-code" = "latest"
 "brew-cask:google-chrome" = "latest"
@@ -14,16 +17,20 @@ dotfiles.default_mode = "symlink"
 [bootstrap.repos]
 "~/dotfiles" = { url = "https://github.com/takahiroaoki/dotfiles.git", ref = "main" }
 
+# < dotfiles >
+# $ mise dot diff
+# $ mise dot apply
 [dotfiles]
 # mise itself
 "~/.config/mise" = "~/dotfiles/symlinks/.config/mise"
-
 # under ~/
 "~/.zshrc/activate" = { block = 'eval "$(mise activate zsh)"' }
-
 # under ~/.config
 "~/.config/git" = "~/dotfiles/symlinks/.config/git"
 
+# < MacOS >
+# $ mise bootstrap macos defaults status
+# $ mise bootstrap macos defaults apply
 [bootstrap.macos.dock]
 autohide = false
 orientation = "left"
@@ -31,4 +38,6 @@ tilesize = 36
 magnification = false
 show_recents = false
 
+# < tools >
+# $ mise install
 [tools]
