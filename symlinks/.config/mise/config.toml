@@ -1,0 +1,34 @@
+min_version = "2026.10.25"
+
+[settings]
+self_update.auto = false
+auto_install = false
+minimum_release_age = "7d"
+dotfiles.default_mode = "symlink"
+
+[bootstrap.packages]
+"brew-cask:visual-studio-code" = "latest"
+"brew-cask:google-chrome" = "latest"
+"brew-cask:nordvpn" = "latest"
+
+[bootstrap.repos]
+"~/dotfiles" = { url = "https://github.com/takahiroaoki/dotfiles.git", ref = "main" }
+
+[dotfiles]
+# mise itself
+"~/.config/mise" = "~/dotfiles/symlinks/.config/mise"
+
+# under ~/
+"~/.zshrc/activate" = { block = 'eval "$(mise activate zsh)"' }
+
+# under ~/.config
+"~/.config/git" = "~/dotfiles/symlinks/.config/git"
+
+[bootstrap.macos.dock]
+autohide = false
+orientation = "left"
+tilesize = 36
+magnification = false
+show_recents = false
+
+[tools]
