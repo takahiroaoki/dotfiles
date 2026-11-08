@@ -39,6 +39,7 @@ tilesize = 36
 magnification = false
 show_recents = false
 apps = [
+    "/System/Applications/Apps.app",
     "/System/Applications/Utilities/Terminal.app",
     "/Applications/Google Chrome.app",
     "/Applications/Visual Studio Code.app",
