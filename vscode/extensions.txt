@@ -1,0 +1,5 @@
+github.vscode-github-actions
+github.vscode-pull-request-github
+golang.go
+hashicorp.terraform
+ms-vscode.vscode-typescript-next

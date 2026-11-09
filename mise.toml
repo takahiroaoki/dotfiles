@@ -47,3 +47,8 @@ apps = [
     "/Applications/NordVPN.app",
     "/System/Applications/System Settings.app",
 ]
+
+[hooks]
+postinstall = [
+    "xargs -L 1 code --install-extension < vscode/extensions.txt"
+]
