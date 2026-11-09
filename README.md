@@ -2,13 +2,13 @@
 
 dotfiles for my own.
 
-This project includes the following settings.
+This project includes the following procedures.
 
-- [git](./git/)
-- [mise](./mise/)
-- [vscode](./vscode/)
+- Installing GUI tools like `Chrome`, `VSCode`, `Docker Desktop`, etc.
+- Mac OS Settings
+- CLI tool settings like `git`, `mise`, `vscode`, etc.
 
-These settings are managed through mise itself.
+These settings above are managed through `mise`.
 
 ## setup
 
