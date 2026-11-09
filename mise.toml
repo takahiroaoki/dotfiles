@@ -51,3 +51,4 @@ apps = [
 
 # < hooks >
 [hooks]
+postinstall = "bash scripts/postinstall.sh"
