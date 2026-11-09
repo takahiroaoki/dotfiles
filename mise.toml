@@ -19,13 +19,12 @@ dotfiles.default_mode = "symlink"
 # $ mise dot diff
 # $ mise dot apply
 [dotfiles]
-# mise itself
-"~/.config/mise/config.toml" = "~/workspace/dotfiles/mise/config.toml"
-# under ~/
+# mise
 "~/.zshrc/activate" = { block = 'eval "$(~/.local/bin/mise activate zsh)"' }
-# under ~/.config
+"~/.config/mise/config.toml" = "~/workspace/dotfiles/mise/config.toml"
+# git
 "~/.config/git/ignore" = "~/workspace/dotfiles/git/ignore"
-# others
+# vscode
 "/usr/local/bin/code" = "/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code"
 "~/Library/Application Support/Code/User/settings.json" = "~/workspace/dotfiles/vscode/settings.json"
 
