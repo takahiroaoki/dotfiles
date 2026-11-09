@@ -46,7 +46,3 @@ apps = [
     "/Applications/NordVPN.app",
     "/System/Applications/System Settings.app",
 ]
-
-# < tools >
-# $ mise install
-[tools]
