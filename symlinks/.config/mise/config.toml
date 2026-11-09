@@ -51,3 +51,7 @@ apps = [
 # < tools >
 # $ mise install
 [tools]
+
+# < hooks >
+[hooks]
+postinstall = "mkdir -p ~/workspace"
