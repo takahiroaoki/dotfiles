@@ -21,12 +21,12 @@ dotfiles.default_mode = "symlink"
 [dotfiles]
 # mise
 "~/.zshrc/activate" = { block = 'eval "$(~/.local/bin/mise activate zsh)"' }
-"~/.config/mise/config.toml" = "~/workspace/dotfiles/mise/config.toml"
+"~/.config/mise/config.toml" = "mise/config.toml"
 # git
-"~/.config/git/ignore" = "~/workspace/dotfiles/git/ignore"
+"~/.config/git/ignore" = "git/ignore"
 # vscode
 "/usr/local/bin/code" = "/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code"
-"~/Library/Application Support/Code/User/settings.json" = "~/workspace/dotfiles/vscode/settings.json"
+"~/Library/Application Support/Code/User/settings.json" = "vscode/settings.json"
 
 # < MacOS >
 # $ mise bootstrap macos defaults status
