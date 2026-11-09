@@ -12,9 +12,6 @@ dotfiles.default_mode = "symlink"
 "brew-cask:visual-studio-code" = "latest"
 "brew-cask:docker" = "latest"
 
-[bootstrap.repos]
-"~/workspace/dotfiles" = { url = "https://github.com/takahiroaoki/dotfiles.git", ref = "main" }
-
 # < dotfiles >
 # $ mise dot diff
 # $ mise dot apply
