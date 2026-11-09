@@ -51,4 +51,3 @@ apps = [
 
 # < hooks >
 [hooks]
-postinstall = "mkdir -p ~/workspace"
