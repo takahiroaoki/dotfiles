@@ -5,3 +5,4 @@ minimum_release_age = "7d"
 
 [tools]
 go = "1.27.3"
+node = "26.13.0"
