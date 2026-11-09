@@ -35,5 +35,8 @@ $ ~/.local/bin/mise bootstrap
 
 ```
 # After installing new extensions
-$ mise run lst-exts
+$ mise run lst_exts
+
+# When updating extensions
+$ mise run upd_exts
 ```

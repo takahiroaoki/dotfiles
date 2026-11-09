@@ -46,9 +46,20 @@ apps = [
 
 [hooks]
 postinstall = [
-    "xargs -L 1 code --install-extension < vscode/extensions.txt"
+    "mise run istl_exts"
 ]
 
-[tasks."lst-exts"]
+[tasks.istl_exts]
+description = "Install VSCode extensions defined in the managed file"
+run = "xargs -L 1 code --install-extension < vscode/extensions.txt"
+
+[tasks.lst_exts]
 description = "List VSCode extensions into the managed file"
-run = "code --list-extensions > vscode/extensions.txt"
+run = "code --list-extensions --show-versions > vscode/extensions.txt"
+
+[tasks.upd_exts]
+description = "Update VSCode extensions and list them into the managed file"
+run = [
+    "code --update-extensions",
+    { task = "lst_exts" },
+]
