@@ -29,7 +29,7 @@ $ ~/.local/bin/mise trust
 $ ~/.local/bin/mise bootstrap
 ```
 
-## Maintenance
+## maintenance
 
 ### VSCode
 
