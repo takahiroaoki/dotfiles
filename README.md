@@ -1,5 +1,15 @@
 # dotfiles
 
+dotfiles for my own.
+
+This project includes the following settings.
+
+- [git](./git/)
+- [mise](./mise/)
+- [vscode](./vscode/)
+
+These settings are managed through mise itself.
+
 ## setup
 
 ```
