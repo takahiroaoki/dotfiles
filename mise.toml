@@ -11,6 +11,7 @@ dotfiles.default_mode = "symlink"
 "brew-cask:google-chrome" = "latest"
 "brew-cask:visual-studio-code" = "latest"
 "brew-cask:docker" = "latest"
+"brew-cask:obsidian" = "latest"
 
 # < dotfiles >
 # $ mise dot diff
@@ -35,13 +36,14 @@ tilesize = 36
 magnification = false
 show_recents = false
 apps = [
-    "/System/Applications/Apps.app",
+    "/System/Applications/System Settings.app",
     "/System/Applications/Utilities/Terminal.app",
+    "/System/Applications/Apps.app",
+    "/Applications/Obsidian.app",
     "/Applications/Google Chrome.app",
     "/Applications/Visual Studio Code.app",
     "/Applications/Docker.app",
     "/Applications/NordVPN.app",
-    "/System/Applications/System Settings.app",
 ]
 
 [hooks]
