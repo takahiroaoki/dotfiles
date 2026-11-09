@@ -28,3 +28,12 @@ $ cd ~/workspace/dotfiles
 $ ~/.local/bin/mise trust
 $ ~/.local/bin/mise bootstrap
 ```
+
+## Maintenance
+
+### VSCode
+
+```
+# After installing new extensions
+$ mise run lst-exts
+```

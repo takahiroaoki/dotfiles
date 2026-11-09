@@ -48,3 +48,7 @@ apps = [
 postinstall = [
     "xargs -L 1 code --install-extension < vscode/extensions.txt"
 ]
+
+[tasks."lst-exts"]
+description = "List VSCode extensions into the managed file"
+run = "code --list-extensions > vscode/extensions.txt"
