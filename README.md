@@ -12,9 +12,6 @@ $ git clone https://github.com/takahiroaoki/dotfiles.git ~/dotfiles
 # install mise
 $ curl -fsSL https://mise.run | sh
 
-# to mise config
-$ cd ~/dotfiles/symlinks/.config/mise
-
 # bootstrap
 $ ~/.local/bin/mise trust
 $ ~/.local/bin/mise bootstrap

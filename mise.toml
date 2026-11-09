@@ -1,0 +1,54 @@
+min_version = "2026.10.25"
+
+[settings]
+dotfiles.default_mode = "symlink"
+
+# < packages >
+# $ mise bootstrap packages status
+# $ mise bootstrap packages apply
+[bootstrap.packages]
+"brew-cask:nordvpn" = "latest"
+"brew-cask:google-chrome" = "latest"
+"brew-cask:visual-studio-code" = "latest"
+"brew-cask:docker" = "latest"
+
+[bootstrap.repos]
+"~/dotfiles" = { url = "https://github.com/takahiroaoki/dotfiles.git", ref = "main" }
+
+# < dotfiles >
+# $ mise dot diff
+# $ mise dot apply
+[dotfiles]
+# mise itself
+"~/.config/mise" = "~/dotfiles/symlinks/.config/mise"
+# under ~/
+"~/.zshrc/activate" = { block = 'eval "$(~/.local/bin/mise activate zsh)"' }
+# under ~/.config
+"~/.config/git" = "~/dotfiles/symlinks/.config/git"
+
+# < MacOS >
+# $ mise bootstrap macos defaults status
+# $ mise bootstrap macos defaults apply
+[bootstrap.macos.dock]
+autohide = false
+orientation = "left"
+tilesize = 36
+magnification = false
+show_recents = false
+apps = [
+    "/System/Applications/Apps.app",
+    "/System/Applications/Utilities/Terminal.app",
+    "/Applications/Google Chrome.app",
+    "/Applications/Visual Studio Code.app",
+    "/Applications/Docker.app",
+    "/Applications/NordVPN.app",
+    "/System/Applications/System Settings.app",
+]
+
+# < tools >
+# $ mise install
+[tools]
+
+# < hooks >
+[hooks]
+postinstall = "mkdir -p ~/workspace"
