@@ -20,7 +20,7 @@ dotfiles.default_mode = "symlink"
 # $ mise dot apply
 [dotfiles]
 # mise itself
-"~/.config/mise" = "~/workspace/dotfiles/symlinks/.config/mise"
+"~/.config/mise/config.toml" = "~/workspace/dotfiles/mise/config.toml"
 # under ~/
 "~/.zshrc/activate" = { block = 'eval "$(~/.local/bin/mise activate zsh)"' }
 # under ~/.config
