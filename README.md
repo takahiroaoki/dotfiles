@@ -7,12 +7,14 @@
 $ xcode-select --install
 
 # git clone
-$ git clone https://github.com/takahiroaoki/dotfiles.git ~/dotfiles
+$ mkdir -p ~/workspace
+$ git clone https://github.com/takahiroaoki/dotfiles.git ~/workspace/dotfiles
 
 # install mise
 $ curl -fsSL https://mise.run | sh
 
 # bootstrap
+$ cd ~/workspace/dotfiles
 $ ~/.local/bin/mise trust
 $ ~/.local/bin/mise bootstrap
 ```

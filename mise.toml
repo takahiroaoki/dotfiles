@@ -13,18 +13,18 @@ dotfiles.default_mode = "symlink"
 "brew-cask:docker" = "latest"
 
 [bootstrap.repos]
-"~/dotfiles" = { url = "https://github.com/takahiroaoki/dotfiles.git", ref = "main" }
+"~/workspace/dotfiles" = { url = "https://github.com/takahiroaoki/dotfiles.git", ref = "main" }
 
 # < dotfiles >
 # $ mise dot diff
 # $ mise dot apply
 [dotfiles]
 # mise itself
-"~/.config/mise" = "~/dotfiles/symlinks/.config/mise"
+"~/.config/mise" = "~/workspace/dotfiles/symlinks/.config/mise"
 # under ~/
 "~/.zshrc/activate" = { block = 'eval "$(~/.local/bin/mise activate zsh)"' }
 # under ~/.config
-"~/.config/git" = "~/dotfiles/symlinks/.config/git"
+"~/.config/git" = "~/workspace/dotfiles/symlinks/.config/git"
 
 # < MacOS >
 # $ mise bootstrap macos defaults status
