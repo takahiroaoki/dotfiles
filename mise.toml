@@ -22,6 +22,11 @@ dotfiles.default_mode = "symlink"
 "~/.config/mise/config.toml" = "mise/config.toml"
 # git
 "~/.config/git/ignore" = "git/ignore"
+"~/.gitconfig_shared" = "git/gitconfig_shared"
+"~/.gitconfig/shared" = { block = """
+[include]
+    path = ~/.gitconfig_shared
+""" }
 # vscode
 "/usr/local/bin/code" = "/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code"
 "~/Library/Application Support/Code/User/settings.json" = "vscode/settings.json"
