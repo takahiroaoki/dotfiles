@@ -44,10 +44,10 @@ apps = [
     "/System/Applications/System Settings.app",
     "/System/Applications/Utilities/Terminal.app",
     "/System/Applications/Apps.app",
-    "/Applications/Obsidian.app",
     "/Applications/Google Chrome.app",
     "/Applications/Visual Studio Code.app",
     "/Applications/Docker.app",
+    "/Applications/Obsidian.app",
     "/Applications/NordVPN.app",
 ]
 
