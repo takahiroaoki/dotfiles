@@ -5,32 +5,12 @@
         {
             "action": "read",
             "resource": "*",
-            "effect": "deny"
-        },
-        {
-            "action": "read",
-            "resource": "$HOME/workspace",
-            "effect": "allow"
-        },
-        {
-            "action": "read",
-            "resource": "$HOME/workspace/*",
-            "effect": "allow"
+            "effect": "ask"
         },
         {
             "action": "edit",
             "resource": "*",
             "effect": "deny"
-        },
-        {
-            "action": "edit",
-            "resource": "$HOME/workspace",
-            "effect": "allow"
-        },
-        {
-            "action": "edit",
-            "resource": "$HOME/workspace/*",
-            "effect": "allow"
         },
         {
             "action": "glob",
