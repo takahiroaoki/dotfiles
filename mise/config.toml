@@ -2,3 +2,6 @@
 self_update.auto = false
 auto_install = false
 minimum_release_age = "7d"
+
+[tools]
+node = "26.13.1"

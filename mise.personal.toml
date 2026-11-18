@@ -14,3 +14,12 @@ apps = [
     "/Applications/Obsidian.app",
     "/Applications/NordVPN.app",
 ]
+
+[dotfiles]
+# mise
+"~/.config/mise/config.local.toml/personal" = { block = """
+[tools]
+opencode = { version = "2.2.7", allow_builds = ["@opencode/cli"] }
+""" }
+# opencode
+"~/.config/opencode/opencode.jsonc" = "opencode/opencode.jsonc"
