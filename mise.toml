@@ -7,11 +7,8 @@ dotfiles.default_mode = "symlink"
 # $ mise bootstrap packages status
 # $ mise bootstrap packages apply
 [bootstrap.packages]
-"brew-cask:nordvpn" = "latest"
 "brew-cask:google-chrome" = "latest"
 "brew-cask:visual-studio-code" = "latest"
-"brew-cask:docker" = "latest"
-"brew-cask:obsidian" = "latest"
 
 # < dotfiles >
 # $ mise dot diff
@@ -46,14 +43,11 @@ apps = [
     "/System/Applications/Apps.app",
     "/Applications/Google Chrome.app",
     "/Applications/Visual Studio Code.app",
-    "/Applications/Docker.app",
-    "/Applications/Obsidian.app",
-    "/Applications/NordVPN.app",
 ]
 
 [hooks]
 postinstall = [
-    "mise run istl_exts"
+    "~/.local/bin/mise run istl_exts"
 ]
 
 [tasks.istl_exts]

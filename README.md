@@ -27,6 +27,9 @@ $ curl -fsSL https://mise.run | sh
 $ cd ~/workspace/dotfiles
 $ ~/.local/bin/mise trust
 $ ~/.local/bin/mise bootstrap
+
+# bootstrap for personal use
+$ ~/.local/bin/mise -E personal bootstrap
 ```
 
 ## maintenance
