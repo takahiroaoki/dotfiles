@@ -3,6 +3,18 @@ description: 作業を分解し、subagentをコントロールする司令塔�
 mode: primary
 model: openai/gpt-5.6-luna
 permissions:
+  - action: read
+    resource: "*"
+    effect: allow
+  - action: glob
+    resource: "*"
+    effect: allow
+  - action: grep
+    resource: "*"
+    effect: allow
+  - action: question
+    resource: "*"
+    effect: allow
   - action: edit
     resource: "*"
     effect: deny
