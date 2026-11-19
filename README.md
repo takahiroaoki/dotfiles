@@ -10,6 +10,10 @@ This project includes the following procedures.
 
 These settings above are managed through `mise`.
 
+## requirements
+
+- Apple Silicon Mac
+
 ## setup
 
 ```
