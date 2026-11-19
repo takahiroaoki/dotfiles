@@ -17,7 +17,7 @@ apps = [
 
 [dotfiles]
 # mise
-"~/.config/mise/config.local.toml/personal" = { block = """
+"~/.config/mise/config.local.toml/optional" = { block = """
 [tools]
 opencode = { version = "2.2.7", allow_builds = ["@opencode/cli"] }
 """ }

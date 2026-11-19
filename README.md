@@ -29,7 +29,7 @@ $ ~/.local/bin/mise trust
 $ ~/.local/bin/mise bootstrap
 
 # bootstrap for personal use
-$ ~/.local/bin/mise -E personal bootstrap
+$ ~/.local/bin/mise -E optional bootstrap
 ```
 
 ## maintenance
