@@ -18,6 +18,9 @@ permissions:
   - action: edit
     resource: "*"
     effect: allow
+  - action: external_directory
+    resource: "~/workspace/dotfiles/agent"
+    effect: allow
   - action: webfetch
     resource: "*"
     effect: allow
