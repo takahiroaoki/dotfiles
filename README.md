@@ -52,5 +52,5 @@ $ mise run upd_exts
 
 ```
 # After update prompts or frontmatters
-$ mise -E optional run sync_opencode
+$ sh ./script/sync_opencode.sh
 ```
