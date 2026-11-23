@@ -16,7 +16,7 @@ apps = [
 ]
 
 [bootstrap.hooks.pre-dotfiles]
-run = "sh ./script/sync_opencode.sh"
+run = "sh ./script/sync_opencode"
 
 [dotfiles]
 # mise
