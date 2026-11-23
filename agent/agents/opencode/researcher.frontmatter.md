@@ -1,10 +1,19 @@
 ---
 description: 意思決定に直結する正確な情報を収集・整理して報告するエージェント。
 mode: subagent
-model: google/gemini-flash-lite-latest
+model: openai/gpt-5.6-luna
 permissions:
   - action: read
     resource: "*"
+    effect: allow
+  - action: read
+    resource: "*.env"
+    effect: ask
+  - action: read
+    resource: "*.env.*"
+    effect: ask
+  - action: read
+    resource: "*.env.example"
     effect: allow
   - action: glob
     resource: "*"

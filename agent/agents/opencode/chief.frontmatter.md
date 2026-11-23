@@ -6,6 +6,15 @@ permissions:
   - action: read
     resource: "*"
     effect: allow
+  - action: read
+    resource: "*.env"
+    effect: ask
+  - action: read
+    resource: "*.env.*"
+    effect: ask
+  - action: read
+    resource: "*.env.example"
+    effect: allow
   - action: glob
     resource: "*"
     effect: allow
@@ -16,10 +25,19 @@ permissions:
     resource: "*"
     effect: allow
   - action: edit
-    resource: "*"
+    resource: "~/workspace/dotfiles/agent/*"
     effect: allow
   - action: external_directory
-    resource: "~/workspace/dotfiles/agent"
+    resource: "~/workspace/dotfiles"
+    effect: allow
+  - action: external_directory
+    resource: "~/workspace/dotfiles/*"
+    effect: allow
+  - action: shell
+    resource: "git -C ~/workspace/dotfiles rev-parse HEAD"
+    effect: allow
+  - action: shell
+    resource: "git rev-parse HEAD"
     effect: allow
   - action: webfetch
     resource: "*"

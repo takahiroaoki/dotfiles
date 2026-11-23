@@ -25,6 +25,11 @@
             "effect": "ask"
         },
         {
+            "action": "grep",
+            "resource": "*",
+            "effect": "ask"
+        },
+        {
             "action": "shell",
             "resource": "*",
             "effect": "ask"
@@ -55,7 +60,7 @@
             "effect": "ask"
         },
         {
-            "action": "experimental_image_generate",
+            "action": "generate_image",
             "resource": "*",
             "effect": "deny"
         },
