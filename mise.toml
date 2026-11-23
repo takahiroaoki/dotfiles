@@ -25,7 +25,7 @@ dotfiles.default_mode = "symlink"
     path = ~/.gitconfig_shared
 """ }
 # vscode
-"/usr/local/bin/code" = "/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code"
+"~/.local/bin/code" = "/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code"
 "~/Library/Application Support/Code/User/settings.json" = "vscode/settings.json"
 
 # < MacOS >
