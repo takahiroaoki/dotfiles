@@ -22,7 +22,8 @@ apps = [
 opencode = { version = "2.2.7", allow_builds = ["@opencode/cli"] }
 """ }
 # opencode
-"~/.config/opencode/agents" = "opencode/agents"
-"~/.config/opencode/commands" = "opencode/commands"
-"~/.config/opencode/opencode.jsonc" = "opencode/opencode.jsonc"
-"~/.config/opencode/AGENTS.md" = "opencode/AGENTS.md"
+"~/.config/opencode/agents" = "agent/agents"
+"~/.config/opencode/commands" = "agent/commands"
+"~/.config/opencode/logs" = "agent/logs"
+"~/.config/opencode/opencode.jsonc" = "agent/opencode.jsonc"
+"~/.config/opencode/AGENTS.md" = "agent/AGENTS.md"
