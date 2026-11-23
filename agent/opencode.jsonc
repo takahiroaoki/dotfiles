@@ -1,5 +1,12 @@
 {
     "$schema": "https://opencode.ai/config.json",
+    "providers": {
+        "google": {
+            "settings": {
+                "apiKey": "{env:GEMINI_API_KEY}",
+            }
+        },
+    },
     "default_agent": "chief",
     "permissions": [
         {

@@ -34,6 +34,11 @@ $ ~/.local/bin/mise bootstrap
 
 # bootstrap for personal use
 $ ~/.local/bin/mise -E optional bootstrap
+
+# to use ai agent via api
+$ echo 'export GEMINI_API_KEY=YOUR_API_KEY' >> ~/.zshrc
+$ echo 'export ANTHROPIC_API_KEY=YOUR_API_KEY' >> ~/.zshrc
+$ echo 'export OPENAI_API_KEY=YOUR_API_KEY' >> ~/.zshrc
 ```
 
 ## maintenance
