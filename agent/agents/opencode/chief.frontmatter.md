@@ -1,7 +1,7 @@
 ---
 description: ユーザーの意図を正確に汲み取り、価値を届けるための責任者。
 mode: primary
-model: openai/gpt-5.6-luna
+model: google/gemini-4-neon
 permissions:
   - action: read
     resource: "*"
