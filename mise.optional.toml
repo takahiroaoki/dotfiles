@@ -15,6 +15,9 @@ apps = [
     "/Applications/NordVPN.app",
 ]
 
+[bootstrap.hooks.pre-dotfiles]
+run = "~/.local/bin/mise -E optional run sync_opencode"
+
 [dotfiles]
 # mise
 "~/.config/mise/config.local.toml/optional" = { block = """
@@ -22,8 +25,32 @@ apps = [
 opencode = { version = "2.2.7", allow_builds = ["@opencode/cli"] }
 """ }
 # opencode
-"~/.config/opencode/agents" = "agent/agents"
+"~/.config/opencode/agents" = "agent/agents/opencode/dist"
 "~/.config/opencode/commands" = "agent/commands"
 "~/.config/opencode/logs" = "agent/logs"
 "~/.config/opencode/opencode.jsonc" = "agent/opencode.jsonc"
 "~/.config/opencode/AGENTS.md" = "agent/AGENTS.md"
+
+[tasks.sync_opencode]
+description = "Concatenate matching agent body and OpenCode frontmatter files into opencode/dist"
+run = """
+opencode="agent/agents/opencode"
+dist="$opencode/dist"
+mkdir -p $dist
+rm -r $dist
+mkdir $dist
+
+for body in agent/agents/*.body.md; do
+    name=${body##*/}
+    name=${name%.body.md}
+    frontmatter="$opencode/$name.frontmatter.md"
+    output="$dist/$name.md"
+
+    if [ -f "$frontmatter" ]; then
+        cat "$frontmatter" "$body" > "$output"
+        echo "Generated $output"
+    else
+        echo "Skip $name: missing $frontmatter"
+    fi
+done
+"""

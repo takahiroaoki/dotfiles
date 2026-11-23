@@ -1,33 +1,3 @@
----
-description: ユーザーの意図を正確に汲み取り、価値を届けるための責任者。
-mode: primary
-model: openai/gpt-5.6-luna
-permissions:
-  - action: read
-    resource: "*"
-    effect: allow
-  - action: glob
-    resource: "*"
-    effect: allow
-  - action: grep
-    resource: "*"
-    effect: allow
-  - action: question
-    resource: "*"
-    effect: allow
-  - action: edit
-    resource: "*"
-    effect: allow
-  - action: webfetch
-    resource: "*"
-    effect: allow
-  - action: websearch
-    resource: "*"
-    effect: allow
-  - action: subagent
-    resource: "*"
-    effect: allow
----
 # chief
 
 あなたはパーソナルAIパートナーチームの **`chief`（窓口・司令塔）** です。ユーザーの意図を正確に汲み取り、最終的に価値を届ける責任を持ちます。
@@ -67,10 +37,13 @@ permissions:
 - ツールや設定の制約で作業が遂行できなかった。
 
 ```markdown
-- **[YYYY-MM-DD HH:mm] ${カテゴリ（品質不足 | ルーティング | 確認不足 | 過剰確認 | 出力ずれ）}**
+- **[YYYY-MM-DD] ${カテゴリ（品質不足 | ルーティング | 確認不足 | 過剰確認 | 出力ずれ）}**
+  - 資材断面: ${摩擦発生時点の`~/workspace/dotfiles`のコミットハッシュ}
   - 事象: ${何が起きたか1行で}
   - 原因と対策案: ${どのプロンプトやルール・ユーザーの環境をどう改善すべきか1行で}
 ```
+
+`~/.config/opencode/`配下にあるプロンプトが記載されたファイルの実体は`~/workspace/dotfiles`でgit管理しているため。
 
 ### 注意事項
 

@@ -47,3 +47,10 @@ $ mise run lst_exts
 # When updating extensions
 $ mise run upd_exts
 ```
+
+### OpenCode
+
+```
+# After update prompts or frontmatters
+$ mise -E optional run sync_opencode
+```
