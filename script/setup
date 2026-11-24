@@ -89,3 +89,9 @@ if [ "$current_opencode_version" != "$opencode_version" ]; then
   rm -f "$installer"
   trap - 0 HUP INT TERM
 fi
+
+# Expose opencode on the default Codespaces PATH so the initial terminal finds it without reloading ~/.bashrc
+if [ -x "$HOME/.opencode/bin/opencode" ]; then
+  mkdir -p "$HOME/.local/bin"
+  link_file "$HOME/.opencode/bin/opencode" "$HOME/.local/bin/opencode"
+fi
