@@ -49,7 +49,6 @@ config_home=${XDG_CONFIG_HOME:-$HOME/.config}
 mkdir -p "$config_home/git"
 
 # git
-link_file "$repo_dir/git/ignore" "$config_home/git/ignore"
 link_file "$repo_dir/git/gitconfig_shared" "$HOME/.gitconfig_shared"
 
 # Add the shared config to the user's existing global config without replacing it.
