@@ -1,4 +1,4 @@
-# self-improve
+# improve-yourself
 
 パーソナルAIパートナーチームの自己改善を行ってください。
 
