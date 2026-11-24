@@ -58,3 +58,13 @@ $ mise run upd_exts
 # After update prompts or frontmatters
 $ sh ./script/sync_opencode
 ```
+
+## GitHub Codespaces
+
+To use this repository in GitHub Codespaces, add `GEMINI_API_KEY` to Codespaces' Secrets so it is available as an environment variable for OpenCode.
+
+Then, execute the following commands.
+```
+$ cd && git clone https://github.com/takahiroaoki/dotfiles.git
+$ sh ./script/codespaces
+```
