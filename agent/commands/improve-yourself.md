@@ -6,7 +6,7 @@
 
 実行時に以下のファイルのすべてを読み込むこと。
 
-`~/workspace/dotfiles/agent/`
+`~/dotfiles/agent/`
 - `opencode.jsonc`: opencodeの設定ファイル
 - `AGENTS.md`: 全エージェントの役割定義
 - `agents/*.body.md`: 各エージェントの役割定義

@@ -25,16 +25,16 @@ permissions:
     resource: "*"
     effect: allow
   - action: edit
-    resource: "~/workspace/dotfiles/agent/*"
+    resource: "~/dotfiles/agent/*"
     effect: allow
   - action: external_directory
-    resource: "~/workspace/dotfiles"
+    resource: "~/dotfiles"
     effect: allow
   - action: external_directory
-    resource: "~/workspace/dotfiles/*"
+    resource: "~/dotfiles/*"
     effect: allow
   - action: shell
-    resource: "git -C ~/workspace/dotfiles rev-parse HEAD"
+    resource: "git -C ~/dotfiles rev-parse HEAD"
     effect: allow
   - action: shell
     resource: "git rev-parse HEAD"

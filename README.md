@@ -21,14 +21,13 @@ These settings above are managed through `mise`.
 $ xcode-select --install
 
 # git clone
-$ mkdir -p ~/workspace
-$ git clone https://github.com/takahiroaoki/dotfiles.git ~/workspace/dotfiles
+$ cd && git clone https://github.com/takahiroaoki/dotfiles.git
 
 # install mise
 $ curl -fsSL https://mise.run | sh
 
 # bootstrap
-$ cd ~/workspace/dotfiles
+$ cd ~/dotfiles
 $ ~/.local/bin/mise trust
 $ ~/.local/bin/mise bootstrap
 
@@ -59,10 +58,3 @@ $ mise run upd_exts
 # After update prompts or frontmatters
 $ sh ./script/sync_opencode
 ```
-
-## GitHub Codespaces
-
-To use this repository in GitHub Codespaces (`script/setup` runs automatically to configure `git` and install `OpenCode`), configure the following in your GitHub Codespaces settings:
-
-- **Dotfiles**: Enable automatic installation and select this repository (`takahiroaoki/dotfiles`).
-- **Secrets**: Add `GEMINI_API_KEY` so it is available as an environment variable for OpenCode.
