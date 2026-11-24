@@ -18,7 +18,6 @@ dotfiles.default_mode = "symlink"
 "~/.zshrc/activate" = { block = 'eval "$(~/.local/bin/mise activate zsh)"' }
 "~/.config/mise/config.toml" = "mise/config.toml"
 # git
-"~/.config/git/ignore" = "git/ignore"
 "~/.gitconfig_shared" = "git/gitconfig_shared"
 "~/.gitconfig/shared" = { block = """
 [include]
