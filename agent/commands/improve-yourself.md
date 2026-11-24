@@ -12,6 +12,7 @@
 - `agents/*.body.md`: 各エージェントの役割定義
 - `agents/*/*.frontmatter.md`: 各エージェントのメタデータ
 - `commands/*.md`: 頻繁に利用するプロンプト
+- `skills/*.md`: エージェントのスキル
 - `logs/friction.md`: 未処理の摩擦ログ（初回実行時は存在しない）
 - `logs/improve.md`: 当作業により適用した改善ログ（初回実行時は存在しない）
 
