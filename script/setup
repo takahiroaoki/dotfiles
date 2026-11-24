@@ -1,0 +1,91 @@
+#!/bin/sh
+
+# GitHub Codespaces で開発に利用するツール群の設定スクリプト
+
+set -eu
+
+if [ "${CODESPACES:-}" != "true" ]; then
+  echo "This installer is intended for GitHub Codespaces only; skipping." >&2
+  exit 1
+fi
+
+for command_name in git curl bash tar; do
+  if ! command -v "$command_name" >/dev/null 2>&1; then
+    echo "Required command not found: $command_name" >&2
+    exit 1
+  fi
+done
+
+script_dir=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
+repo_dir=$(CDPATH= cd -- "$script_dir/.." && pwd)
+opencode_version=$(sed -n 's/^[[:space:]]*opencode[[:space:]]*=[[:space:]]*{.*version[[:space:]]*=[[:space:]]*"\([^"]*\)".*/\1/p' "$repo_dir/mise.optional.toml" | head -n 1)
+if [ -z "$opencode_version" ]; then
+  echo "Could not extract the OpenCode version from mise.optional.toml" >&2
+  exit 1
+fi
+
+link_file() {
+  source=$1
+  destination=$2
+
+  if [ ! -e "$source" ] && [ ! -L "$source" ]; then
+    echo "Link source does not exist: $source" >&2
+    return 1
+  fi
+  if [ -e "$destination" ] && [ ! -L "$destination" ]; then
+    echo "Skip existing non-symlink: $destination" >&2
+    return 0
+  fi
+  if [ -L "$destination" ]; then
+    if [ "$(readlink "$destination")" = "$source" ]; then
+      return 0
+    fi
+    rm "$destination"
+  fi
+  ln -s "$source" "$destination"
+}
+
+config_home=${XDG_CONFIG_HOME:-$HOME/.config}
+mkdir -p "$config_home/git"
+
+# git
+link_file "$repo_dir/git/ignore" "$config_home/git/ignore"
+link_file "$repo_dir/git/gitconfig_shared" "$HOME/.gitconfig_shared"
+
+# Add the shared config to the user's existing global config without replacing it.
+if ! git config --global --get-all include.path 2>/dev/null |
+  awk -v home="$HOME" '$0 == home "/.gitconfig_shared" || $0 == "~/.gitconfig_shared" { found = 1 } END { exit !found }'; then
+  git config --global --add include.path "$HOME/.gitconfig_shared"
+fi
+
+# Generate agent definitions before linking the OpenCode configuration.
+(cd "$repo_dir" && sh "$repo_dir/script/sync_opencode")
+
+mkdir -p "$config_home/opencode"
+link_file "$repo_dir/agent/agents/opencode/dist" "$config_home/opencode/agents"
+link_file "$repo_dir/agent/commands" "$config_home/opencode/commands"
+link_file "$repo_dir/agent/logs" "$config_home/opencode/logs"
+link_file "$repo_dir/agent/skills" "$config_home/opencode/skills"
+link_file "$repo_dir/agent/opencode.jsonc" "$config_home/opencode/opencode.jsonc"
+link_file "$repo_dir/agent/AGENTS.md" "$config_home/opencode/AGENTS.md"
+
+# Prefer the official OpenCode installation, without requiring Node.js or npm.
+installed_opencode=""
+if [ -x "$HOME/.opencode/bin/opencode" ]; then
+  installed_opencode=$HOME/.opencode/bin/opencode
+elif command -v opencode >/dev/null 2>&1; then
+  installed_opencode=$(command -v opencode)
+fi
+
+current_opencode_version=""
+if [ -n "$installed_opencode" ]; then
+  current_opencode_version=$("$installed_opencode" --version 2>/dev/null | head -n 1 | awk '{ print $NF }' | sed 's/^v//') || current_opencode_version=""
+fi
+if [ "$current_opencode_version" != "$opencode_version" ]; then
+  installer=$(mktemp)
+  trap 'rm -f "$installer"' 0 HUP INT TERM
+  curl -fsSL https://opencode.ai/v2/install -o "$installer"
+  bash "$installer" --version "$opencode_version"
+  rm -f "$installer"
+  trap - 0 HUP INT TERM
+fi

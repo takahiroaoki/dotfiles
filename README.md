@@ -59,3 +59,10 @@ $ mise run upd_exts
 # After update prompts or frontmatters
 $ sh ./script/sync_opencode
 ```
+
+## GitHub Codespaces
+
+To use this repository in GitHub Codespaces (`script/setup` runs automatically to configure `git` and install `OpenCode`), configure the following in your GitHub Codespaces settings:
+
+- **Dotfiles**: Enable automatic installation and select this repository (`takahiroaoki/dotfiles`).
+- **Secrets**: Add `GEMINI_API_KEY` so it is available as an environment variable for OpenCode.
