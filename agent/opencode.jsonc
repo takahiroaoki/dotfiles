@@ -12,7 +12,32 @@
         {
             "action": "read",
             "resource": "*",
+            "effect": "allow"
+        },
+        {
+            "action": "read",
+            "resource": "*.env",
             "effect": "ask"
+        },
+        {
+            "action": "read",
+            "resource": "*.env.*",
+            "effect": "ask"
+        },
+        {
+            "action": "read",
+            "resource": "*.env.example",
+            "effect": "allow"
+        },
+        {
+            "action": "glob",
+            "resource": "*",
+            "effect": "allow"
+        },
+        {
+            "action": "grep",
+            "resource": "*",
+            "effect": "allow"
         },
         {
             "action": "edit",
@@ -20,44 +45,44 @@
             "effect": "deny"
         },
         {
-            "action": "glob",
-            "resource": "*",
-            "effect": "ask"
-        },
-        {
-            "action": "grep",
-            "resource": "*",
-            "effect": "ask"
-        },
-        {
             "action": "shell",
             "resource": "*",
-            "effect": "ask"
+            "effect": "deny"
         },
         {
             "action": "subagent",
             "resource": "*",
-            "effect": "ask"
+            "effect": "deny"
         },
         {
             "action": "skill",
             "resource": "*",
-            "effect": "ask"
+            "effect": "allow"
+        },
+        {
+            "action": "skill",
+            "resource": "report",
+            "effect": "deny"
+        },
+        {
+            "action": "skill",
+            "resource": "browser",
+            "effect": "deny"
         },
         {
             "action": "question",
             "resource": "*",
-            "effect": "ask"
+            "effect": "deny"
         },
         {
             "action": "webfetch",
             "resource": "*",
-            "effect": "ask"
+            "effect": "deny"
         },
         {
             "action": "websearch",
             "resource": "*",
-            "effect": "ask"
+            "effect": "deny"
         },
         {
             "action": "generate_image",
@@ -70,9 +95,14 @@
             "effect": "deny"
         },
         {
+            "action": "external_directory",
+            "resource": "~/dotfiles/agent/*",
+            "effect": "allow"
+        },
+        {
             "action": "execute",
             "resource": "*",
-            "effect": "ask"
+            "effect": "deny"
         }
     ],
     "watcher": {

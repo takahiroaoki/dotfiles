@@ -3,46 +3,7 @@ description: 結果の検証、および高リスク操作の事前監査を行�
 mode: subagent
 model: openai/gpt-5.6-luna
 permissions:
-  - action: read
+  - action: shell
     resource: "*"
-    effect: allow
-  - action: read
-    resource: "*.env"
     effect: ask
-  - action: read
-    resource: "*.env.*"
-    effect: ask
-  - action: read
-    resource: "*.env.example"
-    effect: allow
-  - action: glob
-    resource: "*"
-    effect: allow
-  - action: grep
-    resource: "*"
-    effect: allow
-  - action: question
-    resource: "*"
-    effect: deny
-  - action: edit
-    resource: "*"
-    effect: deny
-  - action: webfetch
-    resource: "*"
-    effect: deny
-  - action: websearch
-    resource: "*"
-    effect: deny
-  - action: subagent
-    resource: "*"
-    effect: deny
-  - action: external_directory
-    resource: "~/dotfiles/agent/skills/*"
-    effect: allow
-  - action: external_directory
-    resource: "~/.config/opencode/skills/*"
-    effect: allow
-  - action: skill
-    resource: "*"
-    effect: allow
 ---
