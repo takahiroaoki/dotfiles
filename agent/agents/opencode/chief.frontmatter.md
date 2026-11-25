@@ -32,10 +32,10 @@ permissions:
     effect: allow
   - action: webfetch
     resource: "*"
-    effect: allow
+    effect: deny
   - action: websearch
     resource: "*"
-    effect: allow
+    effect: deny
   - action: subagent
     resource: "*"
     effect: allow
