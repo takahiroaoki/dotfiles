@@ -36,4 +36,13 @@ permissions:
   - action: subagent
     resource: "*"
     effect: deny
+  - action: external_directory
+    resource: "~/dotfiles/agent/skills/*"
+    effect: allow
+  - action: external_directory
+    resource: "~/.config/opencode/skills/*"
+    effect: allow
+  - action: skill
+    resource: "*"
+    effect: allow
 ---

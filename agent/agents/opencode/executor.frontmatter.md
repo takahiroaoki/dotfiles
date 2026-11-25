@@ -30,6 +30,9 @@ permissions:
   - action: external_directory
     resource: "~/dotfiles/*"
     effect: allow
+  - action: external_directory
+    resource: "~/.config/opencode/skills/*"
+    effect: allow
   - action: webfetch
     resource: "*"
     effect: deny
@@ -39,4 +42,7 @@ permissions:
   - action: subagent
     resource: "*"
     effect: deny
+  - action: skill
+    resource: "*"
+    effect: allow
 ---

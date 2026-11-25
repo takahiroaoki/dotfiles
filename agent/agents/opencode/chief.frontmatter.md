@@ -27,6 +27,9 @@ permissions:
   - action: external_directory
     resource: "~/dotfiles/*"
     effect: allow
+  - action: external_directory
+    resource: "~/.config/opencode/skills/*"
+    effect: allow
   - action: shell
     resource: "git -C ~/dotfiles rev-parse HEAD"
     effect: allow
