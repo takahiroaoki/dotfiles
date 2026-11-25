@@ -1,7 +1,7 @@
 ---
 description: ユーザーの意図を正確に汲み取り、価値を届けるための責任者。
 mode: primary
-model: google/gemini-4-neon
+model: google/gemini-4-hydrogen
 permissions:
   - action: question
     resource: "*"
