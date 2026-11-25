@@ -65,6 +65,6 @@ To use this repository in GitHub Codespaces, add `GEMINI_API_KEY` to Codespaces'
 
 Then, execute the following commands.
 ```
-$ cd && git clone https://github.com/takahiroaoki/dotfiles.git && cd dotfiles
-$ sh ./script/codespaces
+$ cd && git clone https://github.com/takahiroaoki/dotfiles.git
+$ sh ./dotfiles/script/codespaces
 ```

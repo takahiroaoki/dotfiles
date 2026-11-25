@@ -58,7 +58,7 @@ if ! git config --global --get-all include.path 2>/dev/null |
 fi
 
 # Generate agent definitions before linking the OpenCode configuration.
-(cd "$repo_dir" && sh "$repo_dir/script/sync_opencode")
+sh "$repo_dir/script/sync_opencode"
 
 mkdir -p "$config_home/opencode"
 link_file "$repo_dir/agent/agents/opencode/dist" "$config_home/opencode/agents"
