@@ -24,12 +24,6 @@ permissions:
   - action: question
     resource: "*"
     effect: allow
-  - action: edit
-    resource: "~/dotfiles/agent/*"
-    effect: allow
-  - action: external_directory
-    resource: "~/dotfiles"
-    effect: allow
   - action: external_directory
     resource: "~/dotfiles/*"
     effect: allow
