@@ -36,9 +36,6 @@ permissions:
   - action: shell
     resource: "git -C ~/dotfiles rev-parse HEAD"
     effect: allow
-  - action: shell
-    resource: "git rev-parse HEAD"
-    effect: allow
   - action: webfetch
     resource: "*"
     effect: allow
