@@ -62,9 +62,38 @@ $ mise run upd_exts
 $ sh ./script/sync_opencode
 ```
 
-## GitHub Codespaces
+## Appendix
 
-To use this repository in GitHub Codespaces, add `GEMINI_API_KEY` to Codespaces' Secrets so it is available as an environment variable for OpenCode.
+### `.miserc.local.toml` examples
+
+- personal Mac Book Air
+    ```toml:.miserc.local.toml
+    env = [
+        "git",
+        "go",
+        "node",
+        "chrome",
+        "vscode",
+        "docker",
+        "obsidian",
+        "nordvpn",
+        "opencode",
+        "macos",
+        "macos.personal",
+    ]
+    ```
+- GitHub Codespaces
+    ```toml:.miserc.local.toml
+    env = [
+        "git",
+        "node",
+        "opencode",
+    ]
+    ```
+
+### GitHub Codespaces
+
+To use this repository in GitHub Codespaces, add `GEMINI_API_KEY` etc. to Codespaces' Secrets so it is available as an environment variable for OpenCode.
 
 Then, execute the following commands.
 ```
