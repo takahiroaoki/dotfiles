@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# agent の本文と対応する frontmatter を連結し、OpenCode 用の agent 定義ファイルを作成する。
-
 set -eu
 
 script_dir=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
