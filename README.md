@@ -70,4 +70,5 @@ Then, execute the following commands.
 ```
 $ cd && git clone https://github.com/takahiroaoki/dotfiles.git && cd dotfiles
 $ sh ./script/codespaces
+$ source ~/.bashrc
 ```
