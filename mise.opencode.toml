@@ -1,0 +1,15 @@
+[bootstrap.hooks.pre-dotfiles]
+run = "sh ./script/sync_opencode"
+
+[dotfiles]
+# mise
+"~/.config/mise/config.local.toml/opencode" = { block = """
+tools.opencode = { version = "2.2.7", allow_builds = ["@opencode/cli"] }
+""" }
+# opencode
+"~/.config/opencode/agents" = "agent/agents/opencode/dist"
+"~/.config/opencode/commands" = "agent/commands"
+"~/.config/opencode/logs" = "agent/logs"
+"~/.config/opencode/skills" = "agent/skills"
+"~/.config/opencode/opencode.jsonc" = "agent/opencode.jsonc"
+"~/.config/opencode/AGENTS.md" = "agent/AGENTS.md"

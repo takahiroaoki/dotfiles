@@ -1,0 +1,6 @@
+[dotfiles]
+"~/.gitconfig_shared" = "git/gitconfig_shared"
+"~/.gitconfig/git" = { block = """
+[include]
+    path = ~/.gitconfig_shared
+""" }

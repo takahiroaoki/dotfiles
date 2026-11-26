@@ -7,59 +7,13 @@ dotfiles.default_mode = "symlink"
 # $ mise bootstrap packages status
 # $ mise bootstrap packages apply
 [bootstrap.packages]
-"brew-cask:google-chrome" = "latest"
-"brew-cask:visual-studio-code" = "latest"
 
 # < dotfiles >
 # $ mise dot diff
 # $ mise dot apply
 [dotfiles]
-# mise
-"~/.zshrc/activate" = { block = 'eval "$(~/.local/bin/mise activate zsh)"' }
-"~/.config/mise/config.toml" = "mise/config.toml"
-# git
-"~/.gitconfig_shared" = "git/gitconfig_shared"
-"~/.gitconfig/shared" = { block = """
-[include]
-    path = ~/.gitconfig_shared
-""" }
-# vscode
-"~/.local/bin/code" = "/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code"
-"~/Library/Application Support/Code/User/settings.json" = "vscode/settings.json"
 
 # < MacOS >
 # $ mise bootstrap macos defaults status
 # $ mise bootstrap macos defaults apply
 [bootstrap.macos.dock]
-autohide = false
-orientation = "left"
-tilesize = 36
-magnification = false
-show_recents = false
-apps = [
-    "/System/Applications/System Settings.app",
-    "/System/Applications/Utilities/Terminal.app",
-    "/System/Applications/Apps.app",
-    "/Applications/Google Chrome.app",
-    "/Applications/Visual Studio Code.app",
-]
-
-[hooks]
-postinstall = [
-    "~/.local/bin/mise run istl_exts"
-]
-
-[tasks.istl_exts]
-description = "Install VSCode extensions defined in the managed file"
-run = "xargs -L 1 code --install-extension < vscode/extensions.txt"
-
-[tasks.lst_exts]
-description = "List VSCode extensions into the managed file"
-run = "code --list-extensions --show-versions > vscode/extensions.txt"
-
-[tasks.upd_exts]
-description = "Update VSCode extensions and list them into the managed file"
-run = [
-    "code --update-extensions",
-    { task = "lst_exts" },
-]

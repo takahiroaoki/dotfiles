@@ -1,0 +1,9 @@
+env = [
+    "mise",
+    "git",
+    "go",
+    "node",
+    "chrome",
+    "vscode",
+    "macos",
+]
