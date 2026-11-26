@@ -10,11 +10,14 @@ This project includes the following procedures.
 
 These settings above are managed through `mise`.
 
-## requirements
+## options
 
-- Apple Silicon Mac
+| environment | packages / tools |
+| --- | --- |
+| Apple Silicon Mac | `chrome`, `docker`, `git`, `go`, `macos`, `macos.*`, `node`, `nordvpn`, `obsidian`, `opencode`, `vscode` |
+| GitHub Codespaces / Linux Server | `git`, `go`, `node`, `opencode` |
 
-## setup
+## setup for Mac
 
 ```
 # install git, curl
@@ -23,18 +26,18 @@ $ xcode-select --install
 # git clone
 $ cd && git clone https://github.com/takahiroaoki/dotfiles.git
 
+# override .miserc.toml to customize which tools you use
+$ cd ~/dotfiles
+$ cp .miserc.toml .miserc.local.toml && vim .miserc.local.toml
+
 # install mise
 $ curl -fsSL https://mise.run | sh
 
 # bootstrap
-$ cd ~/dotfiles
 $ ~/.local/bin/mise trust
 $ ~/.local/bin/mise bootstrap
 
-# bootstrap for personal use
-$ ~/.local/bin/mise -E optional bootstrap
-
-# to use ai agent via api
+# to use AI agent via api
 $ echo 'export GEMINI_API_KEY=YOUR_API_KEY' >> ~/.zshrc
 $ echo 'export ANTHROPIC_API_KEY=YOUR_API_KEY' >> ~/.zshrc
 $ echo 'export OPENAI_API_KEY=YOUR_API_KEY' >> ~/.zshrc
@@ -65,6 +68,6 @@ To use this repository in GitHub Codespaces, add `GEMINI_API_KEY` to Codespaces'
 
 Then, execute the following commands.
 ```
-$ cd && git clone https://github.com/takahiroaoki/dotfiles.git
-$ sh ./dotfiles/script/codespaces
+$ cd && git clone https://github.com/takahiroaoki/dotfiles.git && cd dotfiles
+$ sh ./script/codespaces
 ```

@@ -1,0 +1,5 @@
+[dotfiles]
+# mise
+"~/.config/mise/config.local.toml/go" = { block = """
+tools.go = "1.27.4"
+""" }

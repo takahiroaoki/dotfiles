@@ -1,0 +1,11 @@
+# Constraints
+# - "mac" must be before "mac.*"
+# - "node" must be before "opencode" (if node is not installed yet)
+env = [
+    "git",
+    "go",
+    "node",
+    "chrome",
+    "vscode",
+    "macos",
+]
