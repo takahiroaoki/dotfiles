@@ -10,9 +10,12 @@ This project includes the following procedures.
 
 These settings above are managed through `mise`.
 
-## requirements
+## options
 
-- Apple Silicon Mac
+| environment | packages / tools |
+| --- | --- |
+| Apple Silicon Mac | `chrome`, `docker`, `git`, `go`, `macos`, `macos.*`, `node`, `nordvpn`, `obsidian`, `opencode`, `vscode` |
+| GitHub Codespaces / Linux Server | `git`, `go`, `node`, `opencode` |
 
 ## setup for Mac
 
@@ -25,7 +28,7 @@ $ cd && git clone https://github.com/takahiroaoki/dotfiles.git
 
 # override .miserc.toml to customize which tools you use
 $ cd ~/dotfiles
-$ vim .miserc.local.toml
+$ cp .miserc.toml .miserc.local.toml && vim .miserc.local.toml
 
 # install mise
 $ curl -fsSL https://mise.run | sh

@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# GitHub Codespaces で開発に利用するツール群の設定スクリプト
-
 set -eu
 
 if [ "${CODESPACES:-}" != "true" ]; then
@@ -9,21 +7,22 @@ if [ "${CODESPACES:-}" != "true" ]; then
   exit 1
 fi
 
-TARGET_FILE=.miserc.local.toml
-cat <<EOF > $TARGET_FILE
-env = [
-    "mise",
-    "git",
-    "node",
-    "opencode",
-]
-EOF
+script_dir=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
+repo_dir=$(CDPATH= cd -- "$script_dir/.." && pwd)
+cd "$repo_dir"
 
-if command -v node >/dev/null 2>&1; then
-  TMP_FILE=$(mktemp)
-  grep -v "node" "$TARGET_FILE" > "$TMP_FILE" && mv "$TMP_FILE" "$TARGET_FILE"
-fi
+target_file=.miserc.local.toml
+{
+  echo 'env = ['
+  echo '  "git",'
+  if ! command -v node >/dev/null 2>&1; then
+    echo '  "node",'
+  fi
+  echo '  "opencode",'
+  echo ']'
+} > "$target_file"
 
 curl -fsSL https://mise.run | sh
 
+~/.local/bin/mise trust
 ~/.local/bin/mise bootstrap

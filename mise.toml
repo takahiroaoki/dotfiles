@@ -3,17 +3,22 @@ min_version = "2026.10.25"
 [settings]
 dotfiles.default_mode = "symlink"
 
-# < packages >
+# order: packages -> dotfiles -> macos -> tools
+
+# [bootstrap.packages]
 # $ mise bootstrap packages status
 # $ mise bootstrap packages apply
-[bootstrap.packages]
 
-# < dotfiles >
+[dotfiles]
 # $ mise dot diff
 # $ mise dot apply
-[dotfiles]
+"~/.zshrc/activate" = { block = 'eval "$(~/.local/bin/mise activate zsh)"' }
+"~/.bashrc/activate" = { block = 'eval "$(~/.local/bin/mise activate bash)"' }
+"~/.config/mise/config.toml" = "mise/config.toml"
 
-# < MacOS >
+# [bootstrap.macos.dock]
 # $ mise bootstrap macos defaults status
 # $ mise bootstrap macos defaults apply
-[bootstrap.macos.dock]
+
+# [tools]
+# $ mise install

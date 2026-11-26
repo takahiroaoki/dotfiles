@@ -1,4 +1,0 @@
-[dotfiles]
-"~/.zshrc/mise" = { block = 'eval "$(~/.local/bin/mise activate zsh)"' }
-"~/.bashrc/mise" = { block = 'eval "$(~/.local/bin/mise activate bash)"' }
-"~/.config/mise/config.toml" = "mise/config.toml"
