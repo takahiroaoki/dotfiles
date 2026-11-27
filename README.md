@@ -17,24 +17,29 @@ These settings above are managed through `mise`.
 | Apple Silicon Mac | `chrome`, `docker`, `git`, `go`, `macos`, `macos.*`, `node`, `nordvpn`, `obsidian`, `opencode`, `vscode` |
 | GitHub Codespaces / Linux Server | `git`, `go`, `node`, `opencode` |
 
-## setup for Mac
+## setup
 
-```
-# install git, curl
-$ xcode-select --install
-
-# git clone
-$ cd && git clone https://github.com/takahiroaoki/dotfiles.git
-
-# bootstrap
-# profile: `personal` | `work` | `codespaces`
-$ sh ./dotfiles/scripts/setup ${profile}
-
-# to use AI agent via api
-$ echo 'export GEMINI_API_KEY=YOUR_API_KEY' >> ~/.zshrc
-$ echo 'export ANTHROPIC_API_KEY=YOUR_API_KEY' >> ~/.zshrc
-$ echo 'export OPENAI_API_KEY=YOUR_API_KEY' >> ~/.zshrc
-```
+1. install git, curl if not installed yet
+    ```
+    # Mac for example
+    $ xcode-select --install
+    ```
+2. git clone
+    ```
+    $ cd && git clone https://github.com/takahiroaoki/dotfiles.git
+    ```
+3. bootstrap
+    ```
+    # profile: personal | work | codespaces
+    $ sh ./dotfiles/scripts/setup ${profile}
+    ```
+4. set env vars to use AI Agent via WebAPI
+    ```
+    # Mac for example
+    $ echo 'export GEMINI_API_KEY=YOUR_API_KEY' >> ~/.zshrc
+    $ echo 'export ANTHROPIC_API_KEY=YOUR_API_KEY' >> ~/.zshrc
+    $ echo 'export OPENAI_API_KEY=YOUR_API_KEY' >> ~/.zshrc
+    ```
 
 ## maintenance
 

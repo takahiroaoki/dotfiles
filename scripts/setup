@@ -9,6 +9,8 @@ script_dir=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
 repo_dir=$(CDPATH= cd -- "$script_dir/.." && pwd)
 cd "$repo_dir"
 
+sh ./scripts/sync_opencode
+
 if [ -z "$1" ]; then
   rm -f .miserc.local.toml
 else
