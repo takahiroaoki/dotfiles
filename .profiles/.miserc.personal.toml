@@ -1,0 +1,13 @@
+env = [
+    "git",
+    "go",
+    "node",
+    "chrome",
+    "vscode",
+    "docker",
+    "obsidian",
+    "nordvpn",
+    "opencode",
+    "macos",
+    "macos.personal",
+]

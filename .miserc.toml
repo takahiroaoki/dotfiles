@@ -1,11 +1,4 @@
 # Constraints
 # - "mac" must be before "mac.*"
 # - "node" is necessary for "opencode"
-env = [
-    "git",
-    "go",
-    "node",
-    "chrome",
-    "vscode",
-    "macos",
-]
+env = []
