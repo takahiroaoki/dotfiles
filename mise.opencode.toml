@@ -3,9 +3,8 @@ run = "sh ./script/sync_opencode"
 
 [dotfiles]
 # mise
-"~/.config/mise/config.local.toml/opencode" = { block = """
-tools.opencode = { version = "2.2.7", allow_builds = ["@opencode/cli"] }
-""" }
+"~/.config/mise/conf.d/opencode.toml" = "mise/opencode.toml"
+
 # opencode
 "~/.config/opencode/agents" = "agent/agents/opencode/dist"
 "~/.config/opencode/commands" = "agent/commands"

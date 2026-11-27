@@ -1,5 +1,2 @@
 [dotfiles]
-# mise
-"~/.config/mise/config.local.toml/node" = { block = """
-tools.node = "26.13.1"
-""" }
+"~/.config/mise/conf.d/node.toml" = "mise/node.toml"
