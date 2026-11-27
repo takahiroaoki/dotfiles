@@ -28,7 +28,7 @@ $ cd && git clone https://github.com/takahiroaoki/dotfiles.git
 
 # bootstrap
 # profile: `personal` | `work` | `codespaces`
-$ sh ./dotfiles/script/setup ${profile}
+$ sh ./dotfiles/scripts/setup ${profile}
 
 # to use AI agent via api
 $ echo 'export GEMINI_API_KEY=YOUR_API_KEY' >> ~/.zshrc
@@ -52,5 +52,5 @@ $ mise run upd_exts
 
 ```
 # After update prompts or frontmatters
-$ sh ./script/sync_opencode
+$ sh ./scripts/sync_opencode
 ```

@@ -1,5 +1,5 @@
 [bootstrap.hooks.pre-dotfiles]
-run = "sh ./script/sync_opencode"
+run = "sh ./scripts/sync_opencode"
 
 [dotfiles]
 # mise
