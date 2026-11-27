@@ -1,2 +1,2 @@
 [tools]
-opencode = { version = "2.2.7", allow_builds = ["@opencode/cli"] }
+"aqua:anomalyco/opencode" = { version = "2.2.7", allow_builds = ["@opencode/cli"] }
