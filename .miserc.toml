@@ -1,6 +1,6 @@
 # Constraints
 # - "mac" must be before "mac.*"
-# - "node" must be before "opencode" (node is not necessary here if already installed)
+# - "node" is necessary for "opencode"
 env = [
     "git",
     "go",
