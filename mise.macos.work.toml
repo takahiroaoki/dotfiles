@@ -1,0 +1,8 @@
+[bootstrap.macos.dock]
+apps = [
+    "/System/Applications/System Settings.app",
+    "/System/Applications/Utilities/Terminal.app",
+    "/System/Applications/Apps.app",
+    "/Applications/Google Chrome.app",
+    "/Applications/Visual Studio Code.app",
+]

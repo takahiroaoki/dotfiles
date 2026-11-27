@@ -4,10 +4,3 @@ orientation = "left"
 tilesize = 36
 magnification = false
 show_recents = false
-apps = [
-    "/System/Applications/System Settings.app",
-    "/System/Applications/Utilities/Terminal.app",
-    "/System/Applications/Apps.app",
-    "/Applications/Google Chrome.app",
-    "/Applications/Visual Studio Code.app",
-]
