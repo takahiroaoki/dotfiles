@@ -13,7 +13,7 @@ trap 'rm -rf "$tmp_dist"' EXIT HUP INT TERM
 for body in "$repo_dir"/agent/agents/*.body.md; do
     name=${body##*/}
     name=${name%.body.md}
-    frontmatter="$opencode/$name.frontmatter.md"
+    frontmatter="$opencode/$name.frontmatter.yml"
     output="$tmp_dist/$name.md"
 
     if [ -f "$frontmatter" ]; then
