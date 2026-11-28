@@ -14,7 +14,7 @@ sh ./scripts/sync_opencode
 if [ -z "$1" ]; then
   rm -f .miserc.local.toml
 else
-  cp profiles/.miserc.$1.toml .miserc.local.toml
+  ln -s profiles/.miserc.$1.toml .miserc.local.toml
 fi
 
 curl -fsSL https://mise.run | sh
