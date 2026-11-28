@@ -8,10 +8,12 @@ dotfiles.default_mode = "symlink"
 # [bootstrap.packages]
 # $ mise bootstrap packages status
 # $ mise bootstrap packages apply
+# $ mise bootstrap packages prune --manager brew-cask (--dry-run)
 
 [dotfiles]
 # $ mise dot diff
 # $ mise dot apply
+# $ mise dot unapply (--dry-run)
 "~/.zshrc/activate" = { block = 'eval "$(~/.local/bin/mise activate zsh)"' }
 "~/.bashrc/activate" = { block = 'eval "$(~/.local/bin/mise activate bash)"' }
 "~/.config/mise/config.toml" = "mise/config.toml"
