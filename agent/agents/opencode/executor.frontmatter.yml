@@ -4,8 +4,8 @@ mode: subagent
 model: openai/gpt-6-luna
 permissions:
   - action: edit
-    resource: "*"
-    effect: allow
+    resource: "~/workspace/*"
+    effect: "allow"
   - action: edit
     resource: "~/dotfiles/agent/*"
     effect: ask
